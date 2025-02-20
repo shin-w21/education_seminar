@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教職セミナーポータル</title>
+    <link rel="stylesheet" href="./Setting/setting.css">
+
+    
+    <script>
+        function authenticate() {
+            var validPasswords = ["23114132", "23114001", "abcd", "admin"];
+                                 //渡邉心       福島櫂志
+            var passcode = prompt("パスコードを入力してください:");
+            if (validPasswords.includes(passcode)) { 
+                document.getElementById("content").style.display = "block";
+            } else {
+                alert("パスコードが違います。アクセスできません。");
+                window.location.href ='../index.html';
+            }
+        }
+    </script>
+
+
+
+</head>
+<body onload="authenticate()">
+
+    <!-- タイトル画面 -->
+    <div class="container" id="title-screen">
+        <h1>教職教養（基礎）</h1>
+        <p>開講時限：木曜日２限</p>
+        <button class="btn_re" onclick="location.href='../index.html'">ポータルトップに戻る</button>
+    </div>
+
+
+    <p>教育法規(1)〜(5)</p>
+    <a href="教育法規1〜5.pdf" target="_blank">
+    <button>レジュメを開く</button>
+    </a>
+
+    <p>　</p>
+    <p>　</p>
+
+    <p>教育法規(6)〜(10)</p>
+    <a href="教育法規6〜10.pdf" target="_blank">
+    <button>レジュメを開く</button>
+    </a>
+
+
+
+
+
+    <script>
+        function returnToTitle() {
+            document.getElementById("end-screen").classList.add("hidden");
+            document.getElementById("title-screen").classList.remove("hidden");
+        }
+    </script>
+</body>
+</html>
