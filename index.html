@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教職セミナーポータル</title>
+    <link rel="stylesheet" href="./Setting/setting.css">
+
+  
+</head>
+<body>
+
+    <p class="info">教職セミナーポータル</p>
+    <!-- タイトル画面 -->
+    <div class="container" id="title-screen">
+        <h1>板橋開講セミナー</h1>
+        <button class="btn" onclick="location.href='./seminar_info/板橋.html'">現在準備中</button>
+
+        <p>　</p>
+        <h1>東松山開講セミナー</h1>
+        <button class="btn" onclick="location.href='./seminar_info/東松山_教職教養（基礎）.html'">教職教養（基礎）</button>
+        <button class="btn" onclick="location.href='./seminar_info/東松山_一般教養（理数）.html'">一般教養（理数）</button>
+
+
+    </div>
+
+    <script>
+
+        function loadQuestion() {
+            const questionData = quizData[currentQuestionIndex];
+            document.getElementById("question").textContent = questionData.question;
+            document.getElementById("choices").innerHTML = "";
+            document.getElementById("result").textContent = "";
+            document.getElementById("explanation").textContent = "";
+            document.querySelector(".next-btn").style.display = "none";
+
+            questionData.choices.forEach((choice, index) => {
+                const button = document.createElement("button");
+                button.textContent = choice;
+                button.onclick = () => checkAnswer(index);
+                document.getElementById("choices").appendChild(button);
+            });
+        }
+
+        function returnToTitle() {
+            document.getElementById("end-screen").classList.add("hidden");
+            document.getElementById("title-screen").classList.remove("hidden");
+        }
+    </script>
+</body>
+</html>
