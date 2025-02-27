@@ -70,16 +70,3 @@
             color: #666;
             margin-top: 10px;
         }
-        .next-btn {
-            display: none;
-            margin-top: 15px;
-            padding: 10px 15px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .next-btn:hover {
-            background-color: #218838;
-        }
