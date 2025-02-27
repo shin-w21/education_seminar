@@ -33,28 +33,6 @@
 
     </div>
 
-    <script>
-
-        function loadQuestion() {
-            const questionData = quizData[currentQuestionIndex];
-            document.getElementById("question").textContent = questionData.question;
-            document.getElementById("choices").innerHTML = "";
-            document.getElementById("result").textContent = "";
-            document.getElementById("explanation").textContent = "";
-            document.querySelector(".next-btn").style.display = "none";
-
-            questionData.choices.forEach((choice, index) => {
-                const button = document.createElement("button");
-                button.textContent = choice;
-                button.onclick = () => checkAnswer(index);
-                document.getElementById("choices").appendChild(button);
-            });
-        }
-
-        function returnToTitle() {
-            document.getElementById("end-screen").classList.add("hidden");
-            document.getElementById("title-screen").classList.remove("hidden");
-        }
-    </script>
+    
 </body>
 </html>
